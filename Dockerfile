@@ -1,5 +1,5 @@
-FROM alpine:3.7
-MAINTAINER Brian L. Scott <Brian@Bscott.io>
+FROM alpine:3.8
+MAINTAINER Daniel B. Hagen <daniel.b.hagen@gmail.com>
 ARG HAB_VERSION=
 RUN set -ex \
   && apk add --no-cache --virtual .build-deps \
@@ -10,7 +10,7 @@ RUN set -ex \
   \
   && cd /tmp \
   && wget https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh \
-  && sh install.sh -v ${HAB_VERSION:-} \
+  && sh install.sh {HAB_VERSION:-} \
   && rm -rf install.sh /hab/cache /root/.wget-hsts /root/.gnupg \
   && apk del .build-deps \
   \

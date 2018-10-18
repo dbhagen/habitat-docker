@@ -10,7 +10,7 @@ if [ -z "${HAB_VERSION:-}" ]; then
   exit 2
 fi
 
-image="bscott/habitat"
+image="dbhagen/habitat"
 tag1="$(echo "$HAB_VERSION" | tr '/' '-')"
 tag2="$(echo "$HAB_VERSION" | cut -d '/' -f 1)"
 tag3="latest"
